@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;400;800&display=swap");
 
 body {
-font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 main {
@@ -48,7 +48,6 @@ h3 a:hover {
 }
 
 .Header__Description {
-
 }
 
 .Header__Headshot {
@@ -58,3 +57,48 @@ h3 a:hover {
   height: auto;
 }
 
+.Updates {
+  margin-top: 40px;
+}
+
+.Updates ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.Update {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 30px;
+}
+.Update__Thumbnail img {
+  width: 100%;
+  height: auto;
+  display: block;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.Update__Description h3 {
+  font-weight: bold;
+}
+.Update__Description p {
+  font-size: 14px;
+  line-height: 20px;
+}
+.Update__CalloutLink {
+  display: inline-block;
+  background: #FF8B84;
+  /* font-weight: bold; */
+  padding: 10px 20px;
+  margin-top: 10px;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+}
+.Update__CalloutLink:hover {
+  background-color: #c77871;
+  color: white;
+  cursor: pointer;
+}
