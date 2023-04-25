@@ -31,6 +31,14 @@ p {
   margin-top: 0;
 }
 
+a {
+  color: black;
+}
+
+a:hover {
+  color: #E68A82;
+}
+
 h3 a {
   color: black;
   text-decoration: none;
@@ -47,7 +55,9 @@ h3 a:hover {
   gap: 30px;
 }
 
-.Header__Description {
+.Header__Description p span {
+  background: #FFF9E0;
+  display: inline-block;
 }
 
 .Header__Headshot {
@@ -88,17 +98,18 @@ h3 a:hover {
 }
 .Update__CalloutLink {
   display: inline-block;
-  background: #FF8B84;
+  color: #E68A82;
+  border: 1px solid #E68A82;
+  color: #E68A82;
   /* font-weight: bold; */
   padding: 10px 20px;
   margin-top: 10px;
-  color: black;
   text-decoration: none;
   border-radius: 5px;
   text-align: center;
 }
 .Update__CalloutLink:hover {
-  background-color: #c77871;
+  background-color: #E68A82;
   color: white;
   cursor: pointer;
 }
