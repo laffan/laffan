@@ -36,7 +36,7 @@ a {
 }
 
 a:hover {
-  color: #E68A82;
+  color: #e68a82;
 }
 
 h3 a {
@@ -54,14 +54,22 @@ h3 a:hover {
   grid-template-columns: 2fr 1fr;
   gap: 30px;
 }
+@media (max-width: 768px) {
+  .Header__Content {
+    display: block;
+  }
+}
 
 .Header__Description p span {
-  background: #FFF9E0;
-  display: inline-block;
+  background: #fff9e0;
 }
 
-.Header__Headshot {
+@media (max-width: 768px) {
+  .Header__Headshot {
+    display: none;
+  }
 }
+
 .Header__Headshot img {
   width: 100%;
   height: auto;
@@ -82,11 +90,24 @@ h3 a:hover {
   grid-template-columns: 150px 1fr;
   gap: 30px;
 }
+@media (max-width: 768px) {
+  .Update {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
 .Update__Thumbnail img {
   width: 100%;
   height: auto;
   display: block;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .Update__Thumbnail {
+    display: none;
+  }
 }
 
 .Update__Description h3 {
@@ -98,9 +119,9 @@ h3 a:hover {
 }
 .Update__CalloutLink {
   display: inline-block;
-  color: #E68A82;
-  border: 1px solid #E68A82;
-  color: #E68A82;
+  color: #e68a82;
+  border: 1px solid #e68a82;
+  color: #e68a82;
   /* font-weight: bold; */
   padding: 10px 20px;
   margin-top: 10px;
@@ -109,7 +130,7 @@ h3 a:hover {
   text-align: center;
 }
 .Update__CalloutLink:hover {
-  background-color: #E68A82;
+  background-color: #e68a82;
   color: white;
   cursor: pointer;
 }
