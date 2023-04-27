@@ -19,12 +19,16 @@ h3 {
   font-size: 18px;
   font-weight: normal;
   margin: 0;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #eeeeee;
-  display: inline-block;
 }
 
+h3 a {
+  color: black;
+  text-decoration: none;
+  border-bottom: 1px dotted #000;
+}
+h3 a:hover {
+  border-bottom: 1px solid #000;
+}
 p {
   font-size: 18px;
   line-height: 25px;
@@ -39,21 +43,20 @@ a:hover {
   color: #e68a82;
 }
 
-h3 a {
-  color: black;
-  text-decoration: none;
-  border-bottom: 1px dotted #000;
-}
-h3 a:hover {
-  border-bottom: 1px solid #000;
-}
-
 .Header__Content {
   padding-top: 50px;
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 30px;
 }
+
+.Header__Content h3 {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eeeeee;
+  display: inline-block;
+}
+
 @media (max-width: 768px) {
   .Header__Content {
     display: block;
@@ -77,6 +80,15 @@ h3 a:hover {
 
 .Updates {
   margin-top: 40px;
+}
+
+.Updates h2 {
+  border-top: 1px solid #eeeeee;
+  padding-top: 30px;
+
+}
+.Updates h3 {
+  padding-bottom: 10px;
 }
 
 .Updates ul {
@@ -110,9 +122,6 @@ h3 a:hover {
   }
 }
 
-.Update__Description h3 {
-  font-weight: bold;
-}
 .Update__Description p {
   font-size: 14px;
   line-height: 20px;
