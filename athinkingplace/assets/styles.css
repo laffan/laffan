@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Rasa:ital,wght@0,400;0,700;1,400&display=swap');
+@import url("https://use.typekit.net/iup0poy.css");
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #f8f8f4;
+}
+
+h1 {
+  font-family: "legitima", serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 58px;
+}
+
+h2,
+h3,
+h4 {
+  font-family: "Montserrat", sans-serif;
+}
+
+h2,
+h3 {
+  font-size: 28px;
+  line-height: 35px;
+}
+
+h2 {
+  font-weight: 300;
+  padding-bottom: 20px;
+}
+h3 {
+  font-weight: 700;
+  color: #44bff5;
+}
+h4 {
+  font-weight: 700;
+  font-size: 16px;
+  color: #7dabbf;
+}
+
+p,
+li {
+  font-family: "Rasa", serif;
+  font-size: 21px;
+  line-height: 28px;
+  padding: 10px 0;
+}
+
+p a {
+  color: #44bff5;
+  text-decoration: none;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+p .highlight {
+  background: #ffeda0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 10px 0;
+}
+
+/* Layout */
+
+main {
+  display: grid;
+  grid-template-columns: 150px fit-content(600px) 1fr;
+  gap: 30px;
+}
+@media only screen and (max-width: 600px) {
+  main {
+    grid-template-columns: 1fr;
+    grid-template-rows: 200px 1fr;
+    gap: 30px;
+  }
+}
+
+.Column__Img {
+  background-image: url(img/sidebar-img.jpg);
+  background-size: auto 100vh;
+  background-position: -140px center;
+  background-attachment: fixed;
+
+  display: block;
+}
+@media only screen and (max-width: 600px) {
+  .Column__Img {
+  }
+}
+
+.Column__Text {
+  padding: 20px;
+}
+
+.Column__Illustration {
+  /* padding: 20px; */
+}
+
+.FAQ {
+  padding-top: 50px;
+}
+
+footer {
+  background-color: black;
+  color: gray;
+  padding: 0 10px;
+}
+
+footer p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  padding: 0;
+  font-weight: 700;
+}
+
+footer a {
+  color: gray;
+}
