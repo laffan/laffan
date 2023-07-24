@@ -115,6 +115,35 @@ a:hover {
 .Updates h3 {
   padding-bottom: 10px;
 }
+.Updates__Callout {
+  border: 1px solid gray;
+  margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+}
+.Updates__CalloutImg {
+  background-image: url(./../athinkingplace/assets/img/sidebar-img.jpg);
+  background-size: cover;
+}
+.Updates__CalloutText {
+  padding: 20px 30px;
+}
+.Updates__CalloutText h3 {
+  font-weight: bold;
+}
+.Updates__CalloutText a {
+  background: #e68a82;
+  display: inline-block;
+  padding: 1px 10px;
+  font-weight: bold;
+  color: white;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+.Updates__CalloutText a:hover {
+  text-decoration: underline;
+}
 
 .Updates ul {
   list-style: none;
@@ -147,6 +176,9 @@ a:hover {
   }
 }
 
+.Update h3 {
+  font-weight: bold;
+}
 .Update__Description p {
   font-size: 14px;
   line-height: 20px;
