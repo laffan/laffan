@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nate Laffan - Researcher</title>
-  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="stylesheet" href="assets/styles/main.css" />
 </head>
 
 <body>
@@ -21,76 +21,90 @@
   </script>
 
   <main>
-    <div class="Header">
+    <header class="Header">
       <div class="Header__Content">
         <div class="Header__Description">
           <h1>Nate Laffan</h1>
-          <h3>
+          <h2>
             Ph.D. student in Computational Media at
             <a href="https://engineering.ucsc.edu/departments/computational-media/" target="_blank">UCSC</a>
-          </h3>
+          </h2>
           <div class="Header__HeadshotMini">
             <img src="assets/img/round-headshot.jpg" alt="Nate headshot" />
           </div>
 
           <p>
-            <span>I research computational methods of meaning making and how digital tools can support a meaningful
-              life.</span>
+            <span>I research the design of computational spaces and how digital tools can support a meaningful life.</span>
           </p>
 
-          <p> I am currently a Phd Student in the <a href="https://setlab.soe.ucsc.edu/research/" target="_blank">SET
-              Lab</a>, where I am applying concepts from environmental psychology and landscape architecture to
-            investigate the design of affective/reflective spaces in VR.
+          <p> I am currently a Phd Student in the <a href="https://setlab.soe.ucsc.edu/research/" target="_blank">SET Lab</a> at UCSC, applying concepts from physical design practices and environmental psychology to investigate affective/reflective spaces in VR.
           </p>
           <p>Get in touch via
             <a href="mailto:nlaffan@ucsc.edu" target="_blank">email</a> |
             <a href="https://www.github.com/laffan" target="_blank">github</a>
-            |
-            <a href="https://www.twitter.com/natelaffan" target="_blank">twitter</a>
           </p>
         </div>
         <div class="Header__Headshot">
           <img src="assets/img/round-headshot.jpg" alt="Nate headshot" />
         </div>
       </div>
-    </div>
-    <div class="Updates">
+    </header>
+    <div class="Research">
       <h2>Research</h2>
-      <div class="Updates__Callout">
-        <div class="Updates__CalloutImg"></div>
-        <div class="Updates__CalloutText">
-          <h3>A Thinking Place</h3>
-          <p>In an upcoming study, we ask <i>how might the design of reflective & contemplative
-            spaces in the physical world translate to a virtual context?</i> </p>
-            <p><a href="/athinkingplace">Click here</a> to
-            learn more.</p>
-        </div>
+      <div class="CurrentProjects">
+
+        <h3>Current Projects</h3>
+
+        <ul>
+          <li class="CurrentProject">
+            <img src="./assets/img/project-thumb-1.jpg" alt="Screenshot of contemplative space design." />
+            <h4>Applying Real-World Design Practices to Contemplative Space in XR</h4>
+            <p>We asked designers in the physical world how they approached the design of contemplative space.</p>
+            <a href="/contemplative-space" class="Project__Button">View Project Page</a>
+          </li>
+          <li class="CurrentProject">
+            <img src="./assets/img/project-thumb-2.jpg" alt="Screenshot of shelter in game engine."/>
+            <h4>Alternative Interfaces for Worldbuilding in XR</h4>
+            <p>How might the design of reflective & contemplative spaces in the physical world translate to a virtual
+              context?</p>
+            <a href="#" class="Project__Button --Disabled">Project Page Coming Soon</a>
+          </li>
+        </ul>
+
+
       </div>
-      <ul>
-        <li>
-          <div class="Update">
-            <a class="Update__Thumbnail" href="./files/2023_Inscribe_Designing_for_Reflection.pdf">
-              <img src="./files/2023_Inscribe_Designing_for_Reflection__Thumb.jpg"
-                alt="Designing for Reflection in VR" />
-            </a>
-            <div class="Update__Description">
-              <h3>Inscribe : Designing for Reflection in VR (CHI 2023)</h3>
-              <p>
-                At CHI 2023 I presented a prototype of a WebXR
-                reflection space at the
-                <a href="https://sites.google.com/view/reflectionchiworkshop2023/home?authuser=0"
-                  target="_blank">Reflection Workshop</a>. <a
-                  href="./files/2023_Inscribe_Designing_for_Reflection.pdf">The paper</a> lays out basic considerations
-                for designing
-                reflective environments in VR, and will soon include a
-                prototype you can use with your own VR headset.
-                <a href="https://docs.google.com/forms/d/1XPkmWouYv4lZRXX2mZ0If8GA2XQi8jpXgH3ijWjLgbA"
-                  class="Update__CalloutLink"><strong>Interested?</strong> Sign up to get updates about the project.</a>
-              </p>
+      <div class="Papers">
+        <h3 class="h3HasBorder">Papers</h3>
+
+        <ul>
+          <li>
+            <div class="Paper">
+              <a class="Paper__Thumbnail" href="./files/2023_Inscribe_Designing_for_Reflection.pdf">
+                <img src="./files/2023_Inscribe_Designing_for_Reflection__Thumb.jpg"
+                  alt="Designing for Reflection in VR" />
+              </a>
+              <div class="Paper__Description">
+                <h4>Inscribe : Designing for Reflection in VR (CHI 2023)</h4>
+                <p>
+                  At CHI 2023 I presented a prototype of a WebXR
+                  reflection space at the
+                  <a href="https://sites.google.com/view/reflectionchiworkshop2023/home?authuser=0"
+                    target="_blank">Reflection Workshop</a>. <a
+                    href="./files/2023_Inscribe_Designing_for_Reflection.pdf">The paper</a> lays out basic
+                  considerations
+                  for designing
+                  reflective environments in VR, and will soon include a
+                  prototype you can use with your own VR headset.
+                  <a href="https://docs.google.com/forms/d/1XPkmWouYv4lZRXX2mZ0If8GA2XQi8jpXgH3ijWjLgbA"
+                    class="Paper__CalloutLink"><strong>Interested?</strong> Sign up to get updates about the
+                    project.</a>
+                </p>
+              </div>
             </div>
-          </div>
-        </li>
-      </ul>
+      </div>
+    </div>
+    </li>
+    </ul>
     </div>
   </main>
 </body>

@@ -1,0 +1,128 @@
+
+
+/* CURRENT PROJECTS ----------------------- */
+
+.CurrentProjects {
+  width: 100%;
+}
+
+.CurrentProjects h4 {
+  padding: 10px 0;
+}
+
+.CurrentProjects ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0;
+  padding: 0;
+  gap: 30px;
+}
+
+@media (max-width: 768px) {
+  .CurrentProjects ul {
+    display: block;
+  }
+}
+
+.CurrentProject {
+  list-style: none;
+  margin: 0;
+}
+
+
+@media (max-width: 768px) {
+  .CurrentProject {
+    margin-bottom: 30px;
+  }
+}
+
+.CurrentProject img {
+  width: 100%;
+  height: auto;
+}
+
+.CurrentProject .Project__Button {
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 5px 10px;
+  text-decoration: none;
+  margin: 10px 0;
+  display: inline-block;
+}
+
+.CurrentProject .Project__Button:hover {
+  background-color: #e68a82;
+  border-color: #e68a82;
+  color: white;
+}
+.CurrentProject .Project__Button.--Disabled {
+  opacity: 0.3;
+}
+.CurrentProject .Project__Button.--Disabled:hover {
+  background-color: transparent;
+  border-color: black;
+  color: black;
+  opacity: 0.3;
+}
+
+/* PAPERS --------------------------------- */
+
+.Papers {
+  margin-top: 40px;
+}
+
+.Papers ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.Paper {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 30px;
+}
+@media (max-width: 768px) {
+  .Paper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+.Paper__Thumbnail img {
+  width: 100%;
+  height: auto;
+  display: block;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .Paper__Thumbnail {
+    display: none;
+  }
+}
+
+.Paper h3 {
+  font-weight: bold;
+}
+.Paper__Description p {
+  font-size: 14px;
+  line-height: 20px;
+}
+.Paper__CalloutLink {
+  display: inline-block;
+  color: #e68a82;
+  border: 1px solid #e68a82;
+  color: #e68a82;
+  /* font-weight: bold; */
+  padding: 10px 20px;
+  margin-top: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+}
+.Paper__CalloutLink:hover {
+  background-color: #e68a82;
+  color: white;
+  cursor: pointer;
+}

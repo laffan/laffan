@@ -1,0 +1,53 @@
+.Project__Page h2 {
+  border: none;
+  margin-bottom: 0;
+}
+.Project__Page h3 {
+  padding-top: 0;
+}
+.Project__Page h4 {
+  display: block;
+  padding: 15px 0;
+  border-top: 1px solid black;
+  font-weight: normal;
+  color: gray;
+}
+
+.Project__Page__BackBtn {
+  border: 1px solid #000;
+  position: fixed;
+  left: -40px;
+  top: 110px;
+  background: black;
+  height: 50px;
+  width: 85px;
+  border-radius: 3px;
+  background-image: url("/assets/img/back-arrow.png");
+  background-repeat: no-repeat;
+  background-size: 20px 30px;
+  background-position: 50px 10px;
+  transition: left 300ms;
+}
+.Project__Page__BackBtn:hover {
+  left: -10px
+}
+
+
+
+.Project__Page p {
+  margin-bottom: 20px;
+}
+
+.Project__Subtitle {
+  text-transform: none;
+  font-size: 20px;
+  font-style: italic;
+  padding: 0;
+  margin-top: -10px;
+}
+
+.Project__Page section {
+  border-top: 1px solid #eeeeee;
+  padding-top: 30px;
+  margin-top: 15px;
+}
