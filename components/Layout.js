@@ -15,7 +15,7 @@ const Layout = ({ pageName, children }) => {
         <link rel="icon" type="image/png" href="/favicon/favicon-16x16.png" sizes="16x16" />
       </Head>
 
-      <MainNav />
+      {/* <MainNav /> */}
       <main className="Content">
         {children}
       </main>

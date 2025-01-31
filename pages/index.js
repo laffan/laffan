@@ -3,8 +3,7 @@ import Three from '../components/Three'
 
 const Index = () => (
   <Layout pageName="Home">
-    <h1>Home</h1>
-    <Three />
+    <h1>Being updated - check back soon. </h1>
   </Layout>
 )
 
