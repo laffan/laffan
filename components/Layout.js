@@ -7,7 +7,7 @@ const Layout = ({ pageName, children }) => {
   return (
     <div className={`Layout ${pageName} no-js no-webp`}>
       <Head>
-        <title>{`${pageName} | Created To Pretend`}</title>
+        <title>{`${pageName} | Nate Laffan | Researcher`}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content="Created ... to pretend." />
 
