@@ -1,3 +1,3 @@
 ### Howdy 👋
 
-I'm currently pursuing a PhD in Computational Media at the [University of California Santa Cruz](https://engineering.ucsc.edu/departments/computational-media/) as part of the [SET Lab](https://setlab.soe.ucsc.edu/publications/).  I focus on designing affective/reflective space in VR.
+I'm currently pursuing a PhD in Computational Media at the [University of California Santa Cruz](https://engineering.ucsc.edu/departments/computational-media/).  I study how media systems affect collective memory and the design of affective/reflective space in VR .
