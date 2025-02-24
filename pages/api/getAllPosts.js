@@ -16,14 +16,21 @@ export function getPostBySlug(slug) {
   var { data, content } = matter(fileContents);
   slug = slug.split(".")[0];
   return {...data, slug };
-  return 
+
 }
 
 export function getAllPosts(dir) {
   postsDirectory = join(process.cwd(), 'posts/', dir);
   const slugs = getPostSlugs();
-  const posts = slugs.map((slug) => getPostBySlug(slug));
-  return posts
-}
+  let posts = slugs.map((slug) => getPostBySlug(slug));
 
+  // Separate posts with and without an "order" property
+  const orderedPosts = posts
+    .filter(post => post.order !== undefined)
+    .sort((a, b) => a.order - b.order);
+
+  const unorderedPosts = posts.filter(post => post.order === undefined);
+
+  return [...orderedPosts, ...unorderedPosts];
+}
 export default getAllPosts;

@@ -1,0 +1,14 @@
+.Layout {
+  width: calc(var(--base-width) + 150px);
+  display: grid;
+  grid-template-columns: var(--base-width) 1fr;
+  margin-left: var(--golden7);
+
+  &__Content {
+    border-left: 1px solid #000;
+  }
+  &__Nav {
+    border-left: 1px solid #000;
+    position: relative;
+  }
+}

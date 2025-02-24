@@ -5,16 +5,17 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "export": "next export", 
+    "export": "next export",
     "start": "next start"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
-    "next": "15.1.6",
+    "next": "15.1.7",
     "next-mdx-remote": "^5.0.0",
+    "phaser": "^3.88.2",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "sass": "^1.83.4",
+    "sass": "^1.85.0",
     "three": "^0.173.0"
   }
 }

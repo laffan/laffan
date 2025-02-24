@@ -1,5 +1,24 @@
+:root {
+  --base-width: min(75vw, 800px); /* 80% of viewport width but max 800px */
+  --ratio: 1.618;
+
+  /* Correct recursive golden ratio calculations */
+  --golden1: calc(var(--base-width) / var(--ratio)); /* ≈ 494px */
+  --golden2: calc(var(--golden1) / var(--ratio)); /* ≈ 305px */
+  --golden3: calc(var(--golden2) / var(--ratio)); /* ≈ 189px */
+  --golden4: calc(var(--golden3) / var(--ratio)); /* ≈ 117px */
+  --golden5: calc(var(--golden4) / var(--ratio)); /* ≈ 72px */
+  --golden6: calc(var(--golden5) / var(--ratio)); /* ≈ 45px */
+  --golden7: calc(var(--golden6) / var(--ratio)); /* ≈ 28px */
+
+  --hoverColor: #FACADE;
+}
+
 html, body {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #FEF7F2;
 }
 
 *, *:before, *:after {

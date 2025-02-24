@@ -1,0 +1,46 @@
+.MainNav {
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-left: var(--golden7);
+
+  &__Sticky {
+    margin-top: 450px; // be sure to change sticky function in MainNav.js
+    transition: top 0.3s ease;
+  }
+
+  ul {
+    padding: 0;
+  }
+
+  ul li {
+    list-style: none;
+  }
+
+  ul li a {
+    text-decoration: none;
+    color: black;
+    &:hover {
+      text-decoration: underline;
+      color: var(--hoverColor);
+    }
+  }
+
+  &__Primary li {
+    font-size: 35px;
+    text-transform: uppercase;
+    li {
+      margin: 1px 0;
+    }
+  }
+  &__Secondary li {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+}
+
+.MainNav__Sticky.scrolled {
+  top: 30px; /* Once scrolled past 30vh, sticks at 30px */
+  position: sticky;
+}

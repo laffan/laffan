@@ -1,3 +1,9 @@
-
-@forward 'global/normalize';
 @forward 'global/global';
+@forward 'global/normalize';
+@forward 'global/type';
+
+@forward 'components/Layout.scss';
+
+@forward 'pages/Home.scss';
+@forward 'components/ProjectList.scss';
+@forward 'components/MainNav.scss';

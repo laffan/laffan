@@ -1,0 +1,162 @@
+.Home {
+  section {
+    border-bottom: 1px solid #000;
+    padding: var(--golden5);
+  }
+}
+
+.Mast {
+  display: flex;
+  width: var(--base-width);
+  height: var(--base-width);
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: var(--golden4);
+
+  a {
+    color: black;
+  }
+
+  &__Decoration {
+    width: 100%;
+    height: 542px;
+    width: 781px;
+    background-image: url("/img/rocks.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 0;
+    z-index: 100;
+    position: absolute;
+  }
+}
+
+.Tagline {
+  padding: 0 !important;
+  display: grid;
+  grid-template-columns: var(--golden2) var(--golden1);
+  height: var(--golden1);
+
+  &__Text {
+    padding: var(--golden6);
+
+    h3 {
+      font-size: 40px;
+    }
+  }
+  &__Interactive {
+    border: 1px solid #000;
+  }
+}
+
+.Research {
+  // Font overrides in type.scss
+
+  h3 {
+    font-size: 50px;
+    text-transform: uppercase;
+    margin-top: 30px;
+    display: block;
+  }
+
+  & > h3 {
+    border-top: 1px solid #000;
+    padding-top: 30px;
+  }
+
+  h4 {
+    font-size: 25px;
+    margin-top: 20px;
+    text-transform: none;
+  }
+
+  p {
+    margin-top: 15px;
+  }
+
+  &__Projects {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 30px;
+  }
+
+  &__ProjectsImage {
+    background-image: url("/img/slow-spaces.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 50px;
+  }
+}
+
+.Works {
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  h3 {
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 5px 0;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  &__Row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 0;
+  }
+
+  &__Row li {
+    list-style: none;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    border-right: 1px solid #000;
+    border-left: 1px solid #000;
+    margin-left: -1px;
+    padding: 0 var(--golden7);
+
+    &:first-child {
+      border-left: none;
+      padding-left: 0;
+    }
+    &:last-child {
+      border-right: none;
+      padding-right: 0;
+    }
+  }
+
+  &__Row li img {
+    width: 100%;
+    height: auto;
+  }
+
+  &__Middle {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: var(--golden6) 0;
+    margin: var(--golden6) 0;
+  }
+
+  &__Middle a {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    gap: var(--golden7);
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.Contact {
+  border: 1px dashed cornflowerblue;
+}
+
+.Coliphon {
+  border: 1px dashed darkcyan;
+}
