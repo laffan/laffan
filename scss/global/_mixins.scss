@@ -16,3 +16,18 @@
     @warn "Breakpoint mixin only supports: sm, md, lg";
   }
 }
+
+@mixin linkStyle() {
+    a {
+      color: black;
+      text-decoration: none;
+      border-bottom: 1px dashed #000;
+      transition: background-color;
+
+      &:hover {
+        color: #cb2424;
+        border-bottom: 1px solid #cb2424;
+        background-color: rgb(255, 255, 188);
+      }
+    }
+}

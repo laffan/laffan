@@ -130,10 +130,7 @@
 }
 
 .Works {
-  a {
-    text-decoration: none;
-    color: black;
-  }
+      @include linkStyle();
 
   h3 {
     font-weight: 500;
@@ -210,6 +207,11 @@
     display: grid;
     grid-template-columns: 30% 70%;
     gap: var(--golden7);
+    
+    border: none;
+    &:hover {
+      border: none;
+    }
 
     @include breakpoint(sm) {
       display: block;
@@ -270,13 +272,8 @@
       }
     }
 
-    ul li a {
-      color: black;
-      text-decoration: none;
-
-      &:hover {
-        border-bottom: 1px dashed #000;
-      }
+    ul li {
+      @include linkStyle();
     }
 
     h4 {
@@ -302,16 +299,7 @@
       display: block;
     }
 
-    a {
-      color: black;
-      text-decoration: none;
-      border-bottom: 1px dashed #000;
-
-      &:hover {
-        color: #cb2424;
-        border-bottom: 1px solid #cb2424;
-      }
-    }
+    @include linkStyle();
 
     h4 {
       font-size: 30px;
