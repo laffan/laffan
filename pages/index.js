@@ -9,7 +9,7 @@ import dynamic from "next/dynamic";
 
 const PhaserBlock = dynamic(() => import("../components/PhaserBlock"), {
   ssr: false,
-  loading: () => <p className="PhaserBlock__Loading">Loading ...</p>,
+  loading: () => <div className="PhaserBlock__Loading"></div>,
 });
 
 const Index = ({ projectsJSON }) => {
@@ -56,7 +56,7 @@ const Index = ({ projectsJSON }) => {
           {gameConfig ? (
             <PhaserBlock gameConfig={gameConfig} />
           ) : (
-            <p>Loading game...</p>
+           <div className="PhaserBlock__Loading"></div>
           )}
         </div>
         <div className="Tagline__Text">
