@@ -7,14 +7,17 @@
   flex-direction: column;
   padding-left: var(--golden7);
   z-index: 1000;
-    @include breakpoint(sm) {
-      display: none;
-    }
-
+  @include breakpoint(sm) {
+    display: none;
+  }
   
+  &.--isHome .MainNav__Sticky {
+    margin-top: 450px;
+  }
 
   &__Sticky {
-    margin-top: 450px; // be sure to change sticky function in MainNav.js
+    margin-top: var(--golden7);
+
     transition: top 0.3s ease;
   }
 
@@ -27,8 +30,7 @@
   }
 
   ul li {
-   @include linkStyle();
-   
+    @include linkStyle();
   }
 
   &__Primary li {

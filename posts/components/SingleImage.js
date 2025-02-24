@@ -40,7 +40,7 @@ const SingleImage = ({slug, url, caption="", align="None"}) => {
       <img 
         src={imageSrc} 
         onClick={toggleLightbox} 
-        className="SingleImage__Thumbnail"
+        className={`SingleImage__Thumbnail Align${align}`}
       />
       <p>{caption}</p>
     </div>

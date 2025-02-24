@@ -12,7 +12,7 @@ const NavItems = ({ exclude }) => {
     const handleScroll = () => {
       // changes to scrollThreshold change must be 
       // reflected in MainNav.scss to work properly.
-      const scrollThreshold = 420; 
+      const scrollThreshold = isHomePage ? 420 : 0; 
       setIsSticky(window.scrollY > scrollThreshold);
       
       // Only track active sections on homepage
@@ -87,7 +87,7 @@ const NavItems = ({ exclude }) => {
       ));
 
   return (
-    <nav className="MainNav">
+    <nav className={`MainNav ${isHomePage ? "--isHome" : ""}`}>
       <div className={`MainNav__Sticky ${isSticky ? "scrolled" : ""}`}>
         <ul className="MainNav__Primary">{renderLinks(links.primary)}</ul>
         <ul className="MainNav__Secondary">{renderLinks(links.secondary)}</ul>
