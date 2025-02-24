@@ -1,0 +1,20 @@
+.Footer {
+  display: block;
+  width: 100%;
+  background-color: black;
+  height: 50vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-image: url("/img/footer-rocks.png");
+  background-size: 404px 317px;
+  background-repeat: no-repeat;
+  background-position: 50% 130%;
+  padding: calc(var(--golden5) + var(--golden7));
+
+  h2 {
+    color: #fef7f2;
+    text-transform: none;
+  }
+}

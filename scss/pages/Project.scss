@@ -1,0 +1,63 @@
+@use "../global/mixins" as *;
+
+.Project {
+  min-height: 100vh;
+
+  &__BackButton {
+    border-top: 1px solid #000;
+    display: block;
+    margin-top: var(--golden5);
+    padding: var(--golden8);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    color: black;
+
+    span {
+      position: relative;
+      top: 2px; // Tiny adjustment
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &::before {
+      content: "";
+      background-image: url("/img/back-arrow.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 30px;
+      height: 25px;
+      display: inline-block;
+      margin-top: 3px;
+    }
+  }
+
+  section {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: var(--golden5);
+  }
+
+  h1 {
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+
+  h3 {
+    padding: var(--golden7) 0 5px 0;
+    text-transform: uppercase;
+  }
+
+  p {
+    padding-bottom: var(--golden7);
+
+    &:last-child {
+      padding-bottom: 0px;
+    }
+  }
+}

@@ -10,6 +10,7 @@
   --golden5: calc(var(--golden4) / var(--ratio)); /* ≈ 72px */
   --golden6: calc(var(--golden5) / var(--ratio)); /* ≈ 45px */
   --golden7: calc(var(--golden6) / var(--ratio)); /* ≈ 28px */
+  --golden8: calc(var(--golden7) / var(--ratio)); 
 
   --hoverColor: #FACADE;
 }

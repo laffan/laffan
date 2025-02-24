@@ -5,8 +5,8 @@ import Layout from './../../components/Layout'
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
 
-// Import components for posts
 import  SingleImage  from './../../posts/components/SingleImage'
+import  Album  from './../../posts/components/Album'
 
 export async function getStaticPaths() {
   const files = fs.readdirSync('./posts/projects')
@@ -38,16 +38,17 @@ const Index = ({ mdxSource }) => {
   // ALL components must be added here.
   const components = {
     SingleImage,
+    Album
   }
   console.log(mdxSource)
   return (
     <Layout pageName="Project">
-      <div className="Project__Post">
-        <a href="/">Back to Home </a>
+      
+        <a className="Project__BackButton" href="/"><span>Home</span></a>
+      <section className="Project__Post">
         <h1>{mdxSource.frontmatter.title}</h1>
-        <h2>{mdxSource.frontmatter.subtitle}</h2>
         <MDXRemote {...mdxSource} components={components} />
-      </div>
+      </section>
     </Layout>
   )
 }

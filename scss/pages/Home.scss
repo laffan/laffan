@@ -1,8 +1,15 @@
+@use "../global/mixins" as *;
+
 .Home {
   section {
     border-bottom: 1px solid #000;
     padding: var(--golden5);
   }
+
+    h2 {
+    margin-bottom: 20px;
+  }
+
 }
 
 .Mast {
@@ -27,6 +34,9 @@
     top: 0;
     z-index: 100;
     position: absolute;
+    @include breakpoint(sm) {
+      display: none;
+    }
   }
 }
 
@@ -44,7 +54,13 @@
     }
   }
   &__Interactive {
-    border: 1px solid #000;
+    border-right: 1px solid #000;
+    overflow: hidden;
+    canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 
@@ -59,7 +75,6 @@
   }
 
   & > h3 {
-    border-top: 1px solid #000;
     padding-top: 30px;
   }
 
@@ -79,11 +94,9 @@
     gap: 30px;
   }
 
-  &__ProjectsImage {
-    background-image: url("/img/slow-spaces.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-top: 50px;
+  &__ProjectsImage img {
+    width: 110%;
+    float: left;
   }
 }
 
@@ -92,6 +105,7 @@
     text-decoration: none;
     color: black;
   }
+
 
   h3 {
     font-weight: 500;
@@ -111,9 +125,6 @@
 
   &__Row li {
     list-style: none;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
     border-right: 1px solid #000;
     border-left: 1px solid #000;
     margin-left: -1px;
@@ -129,9 +140,17 @@
     }
   }
 
+  &__Row li .ProjectThumb {
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+  }
   &__Row li img {
     width: 100%;
     height: auto;
+    filter: grayscale(100%);
   }
 
   &__Middle {
@@ -154,9 +173,83 @@
 }
 
 .Contact {
-  border: 1px dashed cornflowerblue;
+  padding: 0 !important;
+  display: grid;
+  grid-template-columns: 60% 40%;
+
+  &__Text {
+    padding: var(--golden5);
+
+    p {
+      padding-bottom: var(--golden7);
+    }
+  }
+
+  &__Links {
+    padding: 0 var(--golden7);
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    ul {
+      padding: 0;
+      list-style: none;
+    }
+
+    ul li {
+      margin-top: var(--golden7);
+    }
+
+    ul li a {
+      color: black;
+      text-decoration: none;
+
+      &:hover {
+        border-bottom: 1px dashed #000;
+      }
+    }
+
+    h4 {
+      font-size: 30px;
+      font-weight: 500;
+    }
+  }
 }
 
 .Coliphon {
-  border: 1px dashed darkcyan;
+
+  h2 {
+    text-transform: none;
+  }
+  &__Credits {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--golden7);
+
+    a {
+      color: black;
+      text-decoration: none;
+      border-bottom: 1px dashed #000;
+
+      &:hover {
+        color: #cb2424;
+        border-bottom: 1px solid #cb2424;
+      }
+    }
+
+    h4 {
+      font-size: 30px;
+      margin-top: var(--golden7);
+      margin-bottom: 5px;
+    }
+
+    p.footnote {
+      font-size: 15px;
+      line-height: 20px;
+      font-style: italic;
+      margin-top: var(--golden8);
+    }
+  }
 }

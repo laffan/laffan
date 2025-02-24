@@ -1,25 +1,37 @@
-import { useState, useEffect } from "react";
-import { Game } from "phaser";
+import { useState, useEffect, useRef } from 'react';
+import Phaser from 'phaser';
 
 export function useGame(config, containerRef) {
   const [game, setGame] = useState(null);
+  const gameRef = useRef(null);
 
   useEffect(() => {
-    if (!config || !containerRef.current) return;
-
-    if (!game) {
-      console.log("Initializing Phaser with config:", config);
-      const newGame = new Game({
+    // Initialize the Phaser game instance if it doesn't exist
+    if (!gameRef.current && containerRef.current) {
+      const newGame = new Phaser.Game({
         ...config,
         parent: containerRef.current,
       });
+      gameRef.current = newGame;
       setGame(newGame);
-    } else {
-      // **Resize the existing game instead of re-initializing**
-      console.log("Resizing existing Phaser game to:", config.width, config.height);
-      game.scale.resize(config.width, config.height);
     }
-  }, [config.width, config.height]); // Only update when size changes
+
+    // Cleanup function to destroy the Phaser game instance on unmount
+    return () => {
+      if (gameRef.current) {
+        gameRef.current.destroy(true);
+        gameRef.current = null;
+        setGame(null);
+      }
+    };
+  }, [config, containerRef]);
+
+  // Handle resizing without reinitializing the game
+  useEffect(() => {
+    if (gameRef.current && config.width && config.height) {
+      gameRef.current.scale.resize(config.width, config.height);
+    }
+  }, [config.width, config.height]);
 
   return game;
 }

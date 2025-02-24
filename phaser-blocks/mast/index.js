@@ -7,8 +7,12 @@ const getGameConfig = async () => {
   const { LoadScene } = await import("./scenes/LoadScene");
 
   return {
-    parent: "myGame",
+    parent: "PhaserMast",
     type: Phaser.AUTO,
+    scale: {
+    mode: Phaser.Scale.RESIZE,
+    autoCenter: Phaser.Scale.CENTER_BOTH,
+  },
     backgroundColor: "#FCFCFC",
     width: 300,
     height: 300,

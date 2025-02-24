@@ -4,6 +4,12 @@
 
 @forward 'components/Layout.scss';
 
-@forward 'pages/Home.scss';
 @forward 'components/ProjectList.scss';
 @forward 'components/MainNav.scss';
+@forward 'components/Footer.scss';
+
+@forward 'pages/Home.scss';
+@forward 'pages/Project.scss';
+
+@forward 'posts/Album.scss';
+@forward 'posts/SingleImage.scss';

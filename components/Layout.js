@@ -4,7 +4,7 @@ import MainNav from "./MainNav";
 
 const Layout = ({ pageName, children }) => {
   return (
-    <div className={`Layout ${pageName} no-js no-webp`}>
+    <>
       <Head>
         <title>{`${pageName} | Nate Laffan`}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -28,14 +28,15 @@ const Layout = ({ pageName, children }) => {
           href="https://use.typekit.net/iup0poy.css"
         ></link>
       </Head>
-      <main className="Layout">
+
+      <main className={`Layout ${pageName}`}>
         <div className="Layout__Content">{children}</div>
         <div className="Layout__Nav">
           <MainNav />
         </div>
       </main>
       <Footer />
-    </div>
+    </>
   );
 };
 

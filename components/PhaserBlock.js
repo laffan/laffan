@@ -25,8 +25,9 @@ function PhaserBlock({ gameConfig }) {
       ref={containerRef}
       className="PhaserBlock"
       style={{
+        display: "block",
         width: "100%",
-        height: "400px", // Adjust height as needed
+        height: `${height}px`
       }}
     ></div>
   );

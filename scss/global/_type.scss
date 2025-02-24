@@ -2,12 +2,16 @@
   font-family: "kaneda-gothic", sans-serif;
   font-weight: 400;
   font-style: normal;
+  
 }
 
 .Calluna {
   font-family: "calluna", serif;
   font-weight: 400;
   font-style: normal;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
 }
 
 
@@ -16,12 +20,23 @@ h1, h2, h4{
   margin: 0;
 }
 
-h3, p, ul, li, .MainNav__Secondary li{
+h3, 
+p, 
+ul, 
+li, 
+.MainNav__Secondary li,
+.Coliphon h2,
+.Footer h2 {
   @extend .Calluna;
   margin: 0;
 }
 
-.Research h3, .MainNav__Primary li, .Works h3 {
+.Research h3, 
+.MainNav__Primary li, 
+.Works h3,
+.Project h3,
+.Project__BackButton
+ {
   @extend .KanedaGothic;
 }
 
@@ -47,6 +62,7 @@ h3 {
   font-size: 30px;
 }
 
-p, li {
+p {
   font-size: 20px;
+  line-height: 25px;
 }
