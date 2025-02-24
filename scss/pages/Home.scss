@@ -4,12 +4,14 @@
   section {
     border-bottom: 1px solid #000;
     padding: var(--golden5);
+    &:last-child {
+      border-bottom: none;
+    }
   }
 
-    h2 {
+  h2 {
     margin-bottom: 20px;
   }
-
 }
 
 .Mast {
@@ -19,6 +21,11 @@
   align-items: flex-end;
   justify-content: flex-start;
   padding: var(--golden4);
+
+  @include breakpoint(sm) {
+    width: 100%;
+    min-height: 90vh;
+  }
 
   a {
     color: black;
@@ -34,8 +41,13 @@
     top: 0;
     z-index: 100;
     position: absolute;
+
     @include breakpoint(sm) {
-      display: none;
+      width: 100%;
+      left: -50px;
+      background-size: 200%;
+      background-position: right 0;
+      top: -100px;
     }
   }
 }
@@ -46,16 +58,33 @@
   grid-template-columns: var(--golden2) var(--golden1);
   height: var(--golden1);
 
+  @include breakpoint(sm) {
+    display: block;
+    height: auto;
+  }
+
   &__Text {
     padding: var(--golden6);
 
     h3 {
       font-size: 40px;
+      @include breakpoint(sm) {
+        font-size: 30px;
+        padding: var(--golden3) var(--golden5);
+      }
     }
   }
   &__Interactive {
     border-right: 1px solid #000;
     overflow: hidden;
+
+    @include breakpoint(sm) {
+      display: block;
+      height: 200px;
+      border-bottom: 1px solid #000;
+      border-right: none;
+    }
+
     canvas {
       display: block;
       width: 100%;
@@ -106,7 +135,6 @@
     color: black;
   }
 
-
   h3 {
     font-weight: 500;
     text-transform: uppercase;
@@ -121,6 +149,16 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     padding: 0;
+    @include breakpoint(sm) {
+      // display: block;
+
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      grid-template-areas:
+        "item1 item2"
+        "item3 item3";
+      gap: var(--golden6);
+    }
   }
 
   &__Row li {
@@ -130,6 +168,10 @@
     margin-left: -1px;
     padding: 0 var(--golden7);
 
+    @include breakpoint(sm) {
+      border: none;
+      padding: 0;
+    }
     &:first-child {
       border-left: none;
       padding-left: 0;
@@ -146,6 +188,10 @@
     align-items: flex-end;
     justify-content: flex-start;
     margin-bottom: 10px;
+    @include breakpoint(sm) {
+      display: block;
+      height: auto;
+    }
   }
   &__Row li img {
     width: 100%;
@@ -165,9 +211,16 @@
     grid-template-columns: 30% 70%;
     gap: var(--golden7);
 
+    @include breakpoint(sm) {
+      display: block;
+    }
+
     img {
       width: 100%;
       height: auto;
+      @include breakpoint(sm) {
+        margin-top: 30px;
+      }
     }
   }
 }
@@ -176,6 +229,10 @@
   padding: 0 !important;
   display: grid;
   grid-template-columns: 60% 40%;
+
+  @include breakpoint(sm) {
+    display: block;
+  }
 
   &__Text {
     padding: var(--golden5);
@@ -191,15 +248,26 @@
     img {
       width: 100%;
       height: auto;
+      @include breakpoint(sm) {
+        display: none;
+      }
     }
 
     ul {
       padding: 0;
       list-style: none;
+      @include breakpoint(sm) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-bottom: 30px;
+      }
     }
 
     ul li {
       margin-top: var(--golden7);
+      @include breakpoint(sm) {
+        text-align: center;
+      }
     }
 
     ul li a {
@@ -219,14 +287,20 @@
 }
 
 .Coliphon {
-
   h2 {
     text-transform: none;
+    @include breakpoint(sm) {
+      font-size: 50px;
+    }
   }
   &__Credits {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--golden7);
+
+    @include breakpoint(sm) {
+      display: block;
+    }
 
     a {
       color: black;
@@ -243,6 +317,9 @@
       font-size: 30px;
       margin-top: var(--golden7);
       margin-bottom: 5px;
+      @include breakpoint(sm) {
+        margin-top: var(--golden5);
+      }
     }
 
     p.footnote {

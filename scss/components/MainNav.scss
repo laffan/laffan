@@ -1,10 +1,18 @@
+@use "../global/mixins" as *;
+
 .MainNav {
   height: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
   padding-left: var(--golden7);
-z-index: 1000;
+  z-index: 1000;
+    @include breakpoint(sm) {
+      display: none;
+    }
+
+  
+
   &__Sticky {
     margin-top: 450px; // be sure to change sticky function in MainNav.js
     transition: top 0.3s ease;

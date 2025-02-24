@@ -43,7 +43,7 @@ const Index = ({ projectsJSON }) => {
         <div className="Mast__Text">
           <h1>Nate Laffan</h1>
           <h3>
-            Ph.D. student in Computational Media at{" "}
+            Ph.D. Student in Computational Media at{" "}
             <a href="https://engineering.ucsc.edu/departments/computational-media/">
               UCSC
             </a>
