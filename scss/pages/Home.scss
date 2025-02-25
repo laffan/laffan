@@ -27,7 +27,7 @@
     min-height: 90vh;
   }
 
-      @include linkStyle();
+  @include linkStyle();
 
   &__Decoration {
     width: 100%;
@@ -44,7 +44,7 @@
       width: 100%;
       left: -50px;
       background-size: 200%;
-      background-position: right 0;
+      background-position: right bottom;
       top: -100px;
     }
   }
@@ -77,13 +77,12 @@
     overflow: hidden;
     background-color: gray;
 
-    .PhaserBlock__Loading{
+    .PhaserBlock__Loading {
       background-image: url(/img/interactive-placeholder.png);
       background-size: contain;
       width: 100%;
       height: 100%;
       display: block;
-
     }
 
     @include breakpoint(sm) {
@@ -103,6 +102,8 @@
 
 .Research {
   // Font overrides in type.scss
+
+  @include linkStyle();
 
   h3 {
     font-size: 50px;
@@ -138,7 +139,7 @@
 }
 
 .Works {
-      @include linkStyle();
+  @include linkStyle();
 
   h3 {
     font-weight: 500;
@@ -215,7 +216,7 @@
     display: grid;
     grid-template-columns: 30% 70%;
     gap: var(--golden7);
-    
+
     border: none;
     &:hover {
       border: none;

@@ -56,7 +56,7 @@ const Index = ({ projectsJSON }) => {
           {gameConfig ? (
             <PhaserBlock gameConfig={gameConfig} />
           ) : (
-           <div className="PhaserBlock__Loading"></div>
+            <div className="PhaserBlock__Loading"></div>
           )}
         </div>
         <div className="Tagline__Text">
@@ -70,12 +70,17 @@ const Index = ({ projectsJSON }) => {
         <div className="Research__Projects">
           <div className="Research__ProjectsText">
             <h2>Research</h2>
-            <h4>The Slow Spaces Project</h4>
+            <h4>
+              <a href="/pdf/Laffan_The_Slow_Space_Editor_MS.pdf" target="_blank">
+                The Slow Space Editor
+              </a>
+            </h4>
+
             <p>
-              In this study, we are interviewing design professionals who have
-              experience designing for the physical world and are interested in
-              reflective contemplation. We hope to learn from how they practice
-              their craft, and find ways.
+              The Slow Space Editor is an XR tool designed to help users create
+              personalized, restorative virtual environments for reflection and
+              attention restoration, broadening access to contemplative spaces
+              through an accessible 2D interface.
             </p>
           </div>
           <div className="Research__ProjectsImage">
@@ -84,7 +89,11 @@ const Index = ({ projectsJSON }) => {
         </div>
 
         <h3>Papers</h3>
-        <h4>Inscribe : Designing for Reflection in VR (CHI 2023)</h4>
+        <h4>
+          <a href="/pdf/Laffan_CHI_2023_InscribeVR.pdf" target="_blank">
+            Inscribe : Designing for Reflection in VR (CHI 2023)
+          </a>
+        </h4>
         <p>
           At CHI 2023 I presented a prototype of a WebXR reflection space at the
           Reflection Workshop. The paper lays out basic considerations for
