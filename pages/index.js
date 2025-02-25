@@ -118,7 +118,7 @@ const Index = ({ projectsJSON }) => {
               </p>
             </div>
             <div className="Works__MiddleImg">
-              <img src={"/img/lookbook-color.png"} />
+              <img src={"/img/lookbook.png"} />
             </div>
           </a>
         </div>
@@ -268,14 +268,14 @@ const Index = ({ projectsJSON }) => {
               .{" "}
             </p>
             <p className="footnote">
-              * An absolutely <b>brilliant</b> piece of software, created using{" "}
+              * An absolutely <b>brilliant</b> piece of software, created by a{" "}
+              <a href="https://lostminds.com/" target="_blank">
+                single developer
+              </a> using{" "}
               <a href="https://godotengine.org/" target="_blank">
                 Godot
               </a>{" "}
-              by a{" "}
-              <a href="https://lostminds.com/" target="_blank">
-                single developer
-              </a>
+              
               . Check out the free trial if you haven't already.
             </p>
           </div>

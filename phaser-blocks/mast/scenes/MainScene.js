@@ -5,7 +5,6 @@ export class MainScene extends Scene {
     super("MainScene")
   }
 
-
   create() {
 
     // Get initial size

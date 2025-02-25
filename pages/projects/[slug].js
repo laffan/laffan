@@ -44,7 +44,7 @@ const Index = ({ mdxSource }) => {
   return (
     <Layout pageName="Project">
       
-        <a className="Project__BackButton" href="/"><span>Home</span></a>
+        <a className="Project__BackButton" href="/#media-works"><span>Home</span></a>
       <section className="Project__Post">
         <h1>{mdxSource.frontmatter.title}</h1>
         <MDXRemote {...mdxSource} components={components} />
