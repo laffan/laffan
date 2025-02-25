@@ -25,6 +25,8 @@
   @include breakpoint(sm) {
     width: 100%;
     min-height: 90vh;
+    border-top: 1px solid #000;
+    padding-top: var(--golden7);
   }
 
   @include linkStyle();
