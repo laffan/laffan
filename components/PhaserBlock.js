@@ -27,7 +27,7 @@ function PhaserBlock({ gameConfig }) {
       style={{
         display: "block",
         width: "100%",
-        height: `${height}px`
+        height: "100%"
       }}
     ></div>
   );
