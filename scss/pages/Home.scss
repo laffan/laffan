@@ -23,9 +23,9 @@
   padding: var(--golden4);
 
   @include breakpoint(sm) {
+    border-top: 1px solid #000;
     width: 100%;
     min-height: 90vh;
-    border-top: 1px solid #000;
     padding-top: var(--golden7);
   }
 
