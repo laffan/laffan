@@ -4,8 +4,6 @@ import ProjectListItems from "../components/ProjectListItems";
 import getAllPosts from "./api/getAllPosts";
 import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
-// import { default as mastConfig }  from "../phaser-blocks/mast";
-// import { default as footerConfig }  from "../phaser-blocks/footer";
 
 const PhaserBlock = dynamic(() => import("../components/PhaserBlock"), {
   ssr: false,
@@ -14,27 +12,36 @@ const PhaserBlock = dynamic(() => import("../components/PhaserBlock"), {
 
 const Index = ({ projectsJSON }) => {
   const [gameConfig, setGameConfig] = useState(null);
+  const [isConfigLoaded, setIsConfigLoaded] = useState(false);
 
   useEffect(() => {
-    let isMounted = true; // Prevents setting state after unmount
+    // Prevent multiple load attempts
+    if (isConfigLoaded) return;
+    
+    let isMounted = true;
 
     async function loadConfig() {
-      const configModule = await import("../phaser-blocks/mast");
-      const config = await configModule.default();
-
-      if (isMounted) {
-        setGameConfig(config);
+      try {
+        // Use a more specific import to reduce build size
+        const configModule = await import("../phaser-blocks/mast");
+        
+        if (isMounted) {
+          const config = await configModule.default();
+          setGameConfig(config);
+          setIsConfigLoaded(true);
+        }
+      } catch (error) {
+        console.error("Failed to load Phaser config:", error);
       }
     }
 
-    if (!gameConfig) {
-      loadConfig();
-    }
+    loadConfig();
 
     return () => {
       isMounted = false;
     };
-  }, []);
+  }, [isConfigLoaded]);
+
 
   return (
     <Layout pageName="Home">
