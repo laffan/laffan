@@ -111,10 +111,9 @@ const Index = ({ projectsJSON }) => {
         <div className="Works__Middle">
           <a href={"https://github.com/laffan/digital-sketchbook"}>
             <div className="Works__MiddleText">
-              <h3>Lookbook</h3>
+              <h3>Playbook</h3>
               <p>
-                A digital sketchbook, composed of half-baked ideas in Blender
-                and P5.js
+                A digital sketchbook of experiments in Blender and P5.js.
               </p>
             </div>
             <div className="Works__MiddleImg">
