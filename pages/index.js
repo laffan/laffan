@@ -200,8 +200,7 @@ const Index = ({ projectsJSON }) => {
 
         <p>
           Any website is only the very tip of an enormous iceberg of
-          extraordinary applications and services, the vast majority of which I
-          don't even know that I'm using. Those that I am aware of I have listed below. If you are even partially responsible for any of them,
+          extraordinary applications and services, the vast majority of which are invisible to the designer or developer. Those that I am aware of I have listed below. If you are even partially responsible for any of them,
           you have my humble thanks. What a world we live in.
         </p>
 
