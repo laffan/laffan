@@ -1,9 +1,10 @@
-// pages/index.js
+// pages/index.js (updated)
 import Layout from "../components/Layout";
 import ProjectListItems from "../components/ProjectListItems";
 import getAllPosts from "./api/getAllPosts";
 import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
+import { loadMultiplePhaserConfigs } from "../utils/loadPhaserConfigs";
 
 const PhaserBlock = dynamic(() => import("../components/PhaserBlock"), {
   ssr: false,
@@ -11,7 +12,7 @@ const PhaserBlock = dynamic(() => import("../components/PhaserBlock"), {
 });
 
 const Index = ({ projectsJSON }) => {
-  const [gameConfig, setGameConfig] = useState(null);
+  const [phaserConfigs, setPhaserConfigs] = useState({});
   const [isConfigLoaded, setIsConfigLoaded] = useState(false);
 
   useEffect(() => {
@@ -20,22 +21,23 @@ const Index = ({ projectsJSON }) => {
     
     let isMounted = true;
 
-    async function loadConfig() {
+    async function loadConfigs() {
       try {
-        // Use a more specific import to reduce build size
-        const configModule = await import("../phaser-blocks/mast");
+        // Load multiple configs
+        const configs = await loadMultiplePhaserConfigs([
+          'mast',
+        ]);
         
         if (isMounted) {
-          const config = await configModule.default();
-          setGameConfig(config);
+          setPhaserConfigs(configs);
           setIsConfigLoaded(true);
         }
       } catch (error) {
-        console.error("Failed to load Phaser config:", error);
+        console.error("Failed to load Phaser configs:", error);
       }
     }
 
-    loadConfig();
+    loadConfigs();
 
     return () => {
       isMounted = false;
@@ -60,8 +62,11 @@ const Index = ({ projectsJSON }) => {
 
       <section className="Tagline">
         <div className="Tagline__Interactive" id="PhaserMast">
-          {gameConfig ? (
-            <PhaserBlock gameConfig={gameConfig} />
+          {phaserConfigs['mast'] ? (
+            <PhaserBlock 
+              gameConfig={phaserConfigs['mast']} 
+              instanceId="mast-instance" 
+            />
           ) : (
             <div className="PhaserBlock__Loading"></div>
           )}
@@ -285,6 +290,7 @@ const Index = ({ projectsJSON }) => {
           </div>
         </div>
       </section>
+
     </Layout>
   );
 };

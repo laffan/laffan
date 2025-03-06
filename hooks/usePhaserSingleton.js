@@ -1,6 +1,7 @@
-// hooks/usePhaserSingleton.js
+// hooks/usePhaserSingleton.js - updated
 import { useState, useEffect } from 'react';
 import Phaser from 'phaser';
+import { useRouter } from 'next/router';
 
 // We'll use a Map to store multiple game instances
 let phaserInstances = new Map();
@@ -9,9 +10,10 @@ let isPhaserLoaded = false;
 
 export function usePhaserSingleton(instanceId = 'default') {
   const [instance, setInstance] = useState(null);
+  const router = useRouter();
 
   useEffect(() => {
-    // Mark Phaser as loaded (only needs to happen once across all instances)
+    // Mark Phaser as loaded
     isPhaserLoaded = true;
     
     // Create a new instance if it doesn't exist for this ID
@@ -27,9 +29,8 @@ export function usePhaserSingleton(instanceId = 'default') {
           newInstance.currentConfig = config;
           
           if (newInstance.isInitialized && newInstance.game) {
-            // If already initialized, just resize instead of destroying
-            newInstance.resize(config.width, config.height);
-            return newInstance.game;
+            // If already initialized, destroy and recreate to ensure clean state
+            newInstance.destroy();
           }
 
           // Create the new Phaser game with provided config and parent
@@ -41,12 +42,11 @@ export function usePhaserSingleton(instanceId = 'default') {
           newInstance.isInitialized = true;
           return newInstance.game;
         },
+        // Rest of your methods remain the same
         resize: (width, height) => {
           if (newInstance.isInitialized && newInstance.game) {
-            // Just resize the scale without destroying the game
             newInstance.game.scale.resize(width, height);
             
-            // Notify all active scenes about the resize
             newInstance.game.scene.scenes.forEach(scene => {
               if (scene.handleResize && typeof scene.handleResize === 'function') {
                 scene.handleResize(width, height);
@@ -57,7 +57,6 @@ export function usePhaserSingleton(instanceId = 'default') {
         updateScrollPosition: (scrollPos) => {
           newInstance.scrollPosition = scrollPos;
           
-          // Notify all active scenes about the scroll update
           if (newInstance.isInitialized && newInstance.game) {
             newInstance.game.scene.scenes.forEach(scene => {
               if (scene.handleScroll && typeof scene.handleScroll === 'function') {
@@ -81,27 +80,35 @@ export function usePhaserSingleton(instanceId = 'default') {
     const instanceToUse = phaserInstances.get(instanceId);
     setInstance(instanceToUse);
 
-    // Cleanup function - only remove the instance if component using it is unmounted
-    return () => {
-      // We won't automatically destroy here, as other components might be using it
-      // To fully clean up, call the destroy method explicitly
+    // Handle Next.js route changes
+    const handleRouteChangeStart = () => {
+      // Mark instances for reinitialization on return
+      if (phaserInstances.has(instanceId)) {
+        const instance = phaserInstances.get(instanceId);
+        // We'll destroy on route change but keep the instance in the Map
+        instance.destroy();
+      }
     };
-  }, [instanceId]);
+
+    router.events.on('routeChangeStart', handleRouteChangeStart);
+
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChangeStart);
+    };
+  }, [instanceId, router]);
 
   return instance;
 }
 
-// Helper function to check if Phaser is already loaded
+// Export other helpers as before
 export function isPhaserAlreadyLoaded() {
   return isPhaserLoaded;
 }
 
-// Helper to get all active Phaser instances
 export function getAllPhaserInstances() {
   return phaserInstances;
 }
 
-// Helper to destroy a specific instance or all instances
 export function destroyPhaserInstance(instanceId = null) {
   if (instanceId) {
     const instance = phaserInstances.get(instanceId);
