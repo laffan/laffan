@@ -6,7 +6,7 @@ const Layout = ({ pageName, children }) => {
   return (
     <>
       <Head>
-        <title>{`${pageName} | Nate Laffan`}</title>
+        <title>{`${pageName} | Nate Laffan | Researcher`}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content="Created ... to pretend." />
 
