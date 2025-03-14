@@ -45,7 +45,7 @@ const Index = ({ projectsJSON }) => {
   return (
     <Layout pageName="Home">
       <section className="Mast">
-        <div className="Mast__Decoration"></div>
+        {/* <div className="Mast__Decoration"></div> */}
         <div className="Mast__Text">
           <h1>Nate Laffan</h1>
           <h3>
@@ -96,7 +96,7 @@ const Index = ({ projectsJSON }) => {
             </p>
           </div>
           <div className="Research__ProjectsImage">
-            <img src="/img/slow-spaces.png" />
+            <img src="/img/slow-spaces.gif" />
           </div>
         </div>
 
@@ -127,7 +127,9 @@ const Index = ({ projectsJSON }) => {
               <p>A digital sketchbook of experiments in Blender and P5.js.</p>
             </div>
             <div className="Works__MiddleImg">
-              <img src={"/img/lookbook.png"} />
+              <img src={"/img/lookbook.gif"}
+                style={{mixBlendMode: "multiply"}}
+               />
             </div>
           </a>
         </div>
@@ -159,7 +161,7 @@ const Index = ({ projectsJSON }) => {
           </p>
         </div>
         <div className="Contact__Links">
-          <img src="/img/self.jpg" />
+          <img src="/img/self.gif" />
           <ul>
             <li>
               <h4>Email</h4>

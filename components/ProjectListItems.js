@@ -10,7 +10,7 @@ const ProjectListItems = ({ projectsJSON, start = 0, length = 10 }) => {
       <li>
         <Link href={"/projects/" + slug}>
         <div className="ProjectThumb">
-          <img src={"/posts/projects/" + slug + "/thumb.png"} alt={title} />
+          <img src={"/posts/projects/" + slug + "/thumb.gif"} alt={title} />
         </div>
           <h3>{title}</h3>
         <p>{subtitle}</p>

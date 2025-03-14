@@ -137,6 +137,7 @@
   &__ProjectsImage img {
     width: 110%;
     float: left;
+    mix-blend-mode: multiply;
   }
 }
 
@@ -205,6 +206,7 @@
     width: 100%;
     height: auto;
     filter: grayscale(100%);
+    mix-blend-mode: multiply;
   }
 
   &__Middle {
@@ -262,6 +264,7 @@
     img {
       width: 100%;
       height: auto;
+      mix-blend-mode: multiply;
       @include breakpoint(sm) {
         display: none;
       }
