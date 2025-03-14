@@ -167,8 +167,124 @@ export class GoldenRatioGenerator {
     }
   }
   
+  getPoints() {
+    // Calculate bounds and centers for all squares
+    const squares = this.rectangles.map((rect, id) => {
+      const x = rect.x;
+      const y = rect.y;
+      const width = rect.width;
+      const height = rect.height;
+      
+      return {
+        id,
+        size: Math.max(width, height),
+        bounds: [
+          [x, y],
+          [x + width, y],
+          [x + width, y + height],
+          [x, y + height]
+        ],
+        center: [x + width/2, y + height/2]
+      };
+    });
+
+    // Find overall canvas boundaries
+    let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+    this.rectangles.forEach(rect => {
+      minX = Math.min(minX, rect.x);
+      minY = Math.min(minY, rect.y);
+      maxX = Math.max(maxX, rect.x + rect.width);
+      maxY = Math.max(maxY, rect.y + rect.height);
+    });
+
+    // For golden ratio, there's typically uncovered space
+    // as the rectangles form a spiral pattern that doesn't fill perfectly
+    const centerX = minX + (maxX - minX) / 2;
+    const centerY = minY + (maxY - minY) / 2;
+    
+    // Identify the area that's not covered by squares
+    // This is a simplified approach that finds a bounding box
+    return {
+      squares,
+      uncovered: {
+        bounds: [
+          [minX, minY],
+          [maxX, minY],
+          [maxX, maxY],
+          [minX, maxY]
+        ],
+        center: [centerX, centerY]
+      }
+    };
+  }
+  
   update(width, height) {
     this.generate(width, height);
+  }
+  
+  debug() {
+    // Clear any previous debug markers
+    if (this.debugMarkers) {
+      this.debugMarkers.forEach(marker => marker.destroy());
+    }
+    this.debugMarkers = [];
+    
+    // Get all the points
+    const points = this.getPoints();
+    
+    // Draw markers for square bounds and centers
+    points.squares.forEach(square => {
+      // Draw square bounds (corner points)
+      square.bounds.forEach(coord => {
+        const marker = this.scene.add.rectangle(
+          coord[0], 
+          coord[1], 
+          2, 
+          2, 
+          0x00FF00
+        );
+        marker.setDepth(1000); // Ensure it's above other elements
+        this.debugMarkers.push(marker);
+      });
+      
+      // Draw square center
+      const centerMarker = this.scene.add.rectangle(
+        square.center[0], 
+        square.center[1], 
+        4, 
+        4, 
+        0xFF0000
+      );
+      centerMarker.setDepth(1000);
+      this.debugMarkers.push(centerMarker);
+    });
+    
+    // Draw uncovered area bounds and center
+    points.uncovered.bounds.forEach(coord => {
+      const marker = this.scene.add.rectangle(
+        coord[0], 
+        coord[1], 
+        2, 
+        2, 
+        0x00FFFF
+      );
+      marker.setDepth(1000);
+      this.debugMarkers.push(marker);
+    });
+    
+    // Draw uncovered area center 
+    const uncoveredCenterMarker = this.scene.add.rectangle(
+      points.uncovered.center[0], 
+      points.uncovered.center[1], 
+      4, 
+      4, 
+      0xFF00FF
+    );
+    uncoveredCenterMarker.setDepth(1000);
+    this.debugMarkers.push(uncoveredCenterMarker);
+    
+    console.log("Debug markers added:", this.debugMarkers.length);
+    console.log("Points data:", points);
   }
 }
 
