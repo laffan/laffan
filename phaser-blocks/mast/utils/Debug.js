@@ -1,5 +1,3 @@
-// phaser-blocks/utils/Debug.js
-
 export class Debug {
   constructor(scene) {
     this.scene = scene;
@@ -10,6 +8,23 @@ export class Debug {
       distanceFromTop: 0,
       percentVisible: 1
     };
+    this.mousePosition = { x: 0, y: 0 };
+    
+    // Add mouse move event listener to track mouse position
+    window.addEventListener('mousemove', this.handleMouseMove.bind(this));
+  }
+
+  handleMouseMove(event) {
+    // Store mouse position relative to browser window
+    this.mousePosition = {
+      x: event.clientX,
+      y: event.clientY
+    };
+    
+    // Update mouse position text if it exists
+    if (this.elements.mouseText) {
+      this.elements.mouseText.setText(`Mouse: ${this.mousePosition.x}, ${this.mousePosition.y}`);
+    }
   }
 
   create(width, height) {
@@ -36,6 +51,14 @@ export class Debug {
       { color: '#000', fontSize: '16px' }
     );
     this.elements.visibilityText.setDepth(1000);
+    
+    // Add mouse position text display
+    this.elements.mouseText = this.scene.add.text(
+      10, 70,
+      `Mouse: ${this.mousePosition.x}, ${this.mousePosition.y}`,
+      { color: '#000', fontSize: '16px' }
+    );
+    this.elements.mouseText.setDepth(1000);
 
     // Create corner squares
     this.elements.topLeft = this.scene.add.rectangle(0, 0, 5, 5, 0x00ff00);
@@ -98,6 +121,11 @@ export class Debug {
     if (this.elements.visibilityText && this.scrollData.isVisible !== undefined) {
       this.elements.visibilityText.setText(`Visible: ${this.scrollData.isVisible ? 'Yes' : 'No'} (${Math.round(this.scrollData.percentVisible * 100)}%)`);
     }
+  }
+  
+  // Cleanup method to remove event listeners when needed
+  destroy() {
+    window.removeEventListener('mousemove', this.handleMouseMove.bind(this));
   }
 }
 
