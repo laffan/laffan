@@ -18,16 +18,14 @@ const Index = ({ projectsJSON }) => {
   useEffect(() => {
     // Prevent multiple load attempts
     if (isConfigLoaded) return;
-    
+
     let isMounted = true;
 
     async function loadConfigs() {
       try {
         // Load multiple configs
-        const configs = await loadMultiplePhaserConfigs([
-          'mast',
-        ]);
-        
+        const configs = await loadMultiplePhaserConfigs(["mast"]);
+
         if (isMounted) {
           setPhaserConfigs(configs);
           setIsConfigLoaded(true);
@@ -43,7 +41,6 @@ const Index = ({ projectsJSON }) => {
       isMounted = false;
     };
   }, [isConfigLoaded]);
-
 
   return (
     <Layout pageName="Home">
@@ -62,10 +59,10 @@ const Index = ({ projectsJSON }) => {
 
       <section className="Tagline">
         <div className="Tagline__Interactive" id="PhaserMast">
-          {phaserConfigs['mast'] ? (
-            <PhaserBlock 
-              gameConfig={phaserConfigs['mast']} 
-              instanceId="mast-instance" 
+          {phaserConfigs["mast"] ? (
+            <PhaserBlock
+              gameConfig={phaserConfigs["mast"]}
+              instanceId="mast-instance"
             />
           ) : (
             <div className="PhaserBlock__Loading"></div>
@@ -83,7 +80,10 @@ const Index = ({ projectsJSON }) => {
           <div className="Research__ProjectsText">
             <h2>Research</h2>
             <h4>
-              <a href="/pdf/Laffan_The_Slow_Space_Editor_MS.pdf" target="_blank">
+              <a
+                href="/pdf/Laffan_The_Slow_Space_Editor_MS.pdf"
+                target="_blank"
+              >
                 The Slow Space Editor
               </a>
             </h4>
@@ -124,9 +124,7 @@ const Index = ({ projectsJSON }) => {
           <a href={"https://github.com/laffan/digital-sketchbook"}>
             <div className="Works__MiddleText">
               <h3>Playbook</h3>
-              <p>
-                A digital sketchbook of experiments in Blender and P5.js.
-              </p>
+              <p>A digital sketchbook of experiments in Blender and P5.js.</p>
             </div>
             <div className="Works__MiddleImg">
               <img src={"/img/lookbook.png"} />
@@ -143,14 +141,14 @@ const Index = ({ projectsJSON }) => {
           <h2>Contact</h2>
           <p>
             In case you missed that top bit: I research how digital tools impact
-            our memories and attention. My work focusses on environmental
-            psychology, reflection, externalized memory and emergent narrative.
+            our memories and attention. My work focusses on memory studies,
+            environmental psychology, reflection and externalized cognition.
           </p>
 
           <p>
-            Currently, I'm is studying reflective practices in VR, and how
-            precepts from landscape architecture and environmental psychology
-            can help individuals relate to virtual space.
+            Currently, I am studying how the technologies that we use to extend
+            our personal memories affect what (and how) we remember
+            collectively.
           </p>
 
           <p>
@@ -205,8 +203,10 @@ const Index = ({ projectsJSON }) => {
 
         <p>
           Any website is only the very tip of an enormous iceberg of
-          extraordinary applications and services, the vast majority of which are invisible to the designer or developer. Those that I am aware of I have listed below. If you are even partially responsible for any of them,
-          you have my humble thanks. What a world we live in.
+          extraordinary applications and services, the vast majority of which
+          are invisible to the designer or developer. Those that I am aware of I
+          have listed below. If you are even partially responsible for any of
+          them, you have my humble thanks. What a world we live in.
         </p>
 
         <div className="Coliphon__Credits">
@@ -280,17 +280,16 @@ const Index = ({ projectsJSON }) => {
               * An absolutely <b>brilliant</b> piece of software, created by a{" "}
               <a href="https://lostminds.com/" target="_blank">
                 single developer
-              </a> using{" "}
+              </a>{" "}
+              using{" "}
               <a href="https://godotengine.org/" target="_blank">
                 Godot
               </a>{" "}
-              
               . Check out the free trial if you haven't already.
             </p>
           </div>
         </div>
       </section>
-
     </Layout>
   );
 };
