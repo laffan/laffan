@@ -45,7 +45,19 @@ const Index = ({ projectsJSON }) => {
   return (
     <Layout pageName="Home">
       <section className="Mast">
-        {/* <div className="Mast__Decoration"></div> */}
+
+        <div className="Mast__Interactive" id="PhaserMast">
+          {phaserConfigs["mast"] ? (
+            <PhaserBlock
+              gameConfig={phaserConfigs["mast"]}
+              instanceId="mast-instance"
+            />
+          ) : (
+            <div className="PhaserBlock__Loading"></div>
+          )}
+        </div>
+
+
         <div className="Mast__Text">
           <h1>Nate Laffan</h1>
           <h3>
@@ -58,11 +70,11 @@ const Index = ({ projectsJSON }) => {
       </section>
 
       <section className="Tagline">
-        <div className="Tagline__Interactive" id="PhaserMast">
-          {phaserConfigs["mast"] ? (
+        <div className="Tagline__Interactive" id="PhaserTagline">
+          {phaserConfigs["tagline"] ? (
             <PhaserBlock
-              gameConfig={phaserConfigs["mast"]}
-              instanceId="mast-instance"
+              gameConfig={phaserConfigs["tagline"]}
+              instanceId="tagline-instance"
             />
           ) : (
             <div className="PhaserBlock__Loading"></div>

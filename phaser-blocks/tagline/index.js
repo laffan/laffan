@@ -5,9 +5,9 @@ const getGameConfig = async () => {
   const { MainScene } = await import("./scenes/MainScene");
 
   return {
-    parent: "PhaserMast",
+    parent: "PhaserTagline",
     type: Phaser.AUTO,
-    transparent: true,  
+    backgroundColor: "#000000",
     width: 300,
     height: 300,
     input: {
