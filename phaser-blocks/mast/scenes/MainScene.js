@@ -1,7 +1,5 @@
 // phaser-blocks/scenes/MainScene.js
 import { Scene } from "phaser";
-import GoldenRatioGenerator from "../utils/GoldenRatioGenerator";
-import Debug from "../utils/Debug";
 import Flower from "../prefabs/Flower";
 
 export class MainScene extends Scene {
@@ -13,9 +11,6 @@ export class MainScene extends Scene {
   }
 
   create() {
-    console.log("MainScene Created");
-
-    // Define the flower size in grid cells (our pattern is 3x3)
     this.flowerSizeInCells = 3;
 
     // Calculate grid dimensions based on container size
