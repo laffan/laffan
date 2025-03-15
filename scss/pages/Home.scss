@@ -31,27 +31,24 @@
 
   @include linkStyle();
 
-  &__Interactive{
-    // border: 1px solid red;
+  &__Interactive {
     height: 600px;
     width: 100%;
     top: 0;
     position: absolute;
     left: 0;
 
-        @include breakpoint(sm) {
-          height: 400px;
+    @include breakpoint(sm) {
+      height: 400px;
     }
-
   }
-
 }
 
 .Tagline {
   padding: 0 !important;
   display: grid;
   grid-template-columns: var(--golden2) var(--golden1);
-  height: var(--golden1);
+  height: var(--golden2);
 
   @include breakpoint(sm) {
     display: block;
@@ -73,6 +70,8 @@
     border-right: 1px solid #000;
     overflow: hidden;
     // background-color: gray;
+    padding: 6px;
+    mix-blend-mode: multiply;
 
     .PhaserBlock__Loading {
       // background-image: url(/img/interactive-placeholder.png);

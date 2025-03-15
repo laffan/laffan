@@ -24,7 +24,7 @@ const Index = ({ projectsJSON }) => {
     async function loadConfigs() {
       try {
         // Load multiple configs
-        const configs = await loadMultiplePhaserConfigs(["mast"]);
+        const configs = await loadMultiplePhaserConfigs(["mast", "tagline"]);
 
         if (isMounted) {
           setPhaserConfigs(configs);

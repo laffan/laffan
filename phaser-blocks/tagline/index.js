@@ -7,7 +7,7 @@ const getGameConfig = async () => {
   return {
     parent: "PhaserTagline",
     type: Phaser.AUTO,
-    backgroundColor: "#000000",
+    transparent: true,  
     width: 300,
     height: 300,
     input: {

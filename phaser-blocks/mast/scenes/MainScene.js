@@ -22,7 +22,6 @@ export class MainScene extends Scene {
       Math.floor(this.cameras.main.height / this.gridSize) -
       (this.flowerSizeInCells - 1);
 
-    console.log(`Grid dimensions: ${this.gridWidth}x${this.gridHeight}`);
 
     // Place flowers randomly
     // Determine flower count based on screen width
@@ -62,11 +61,6 @@ export class MainScene extends Scene {
         this.flowers.push(flower);
         this.flowerPositions.push(position);
 
-        console.log(
-          `Placed flower ${
-            i + 1
-          } at grid (${gridX}, ${gridY}), pixel (${pixelX}, ${pixelY})`
-        );
       } else {
         console.warn(`Could not find valid position for flower ${i + 1}`);
         break;
