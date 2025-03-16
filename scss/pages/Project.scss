@@ -56,6 +56,8 @@
   p {
     padding-bottom: var(--golden7);
 
+      @include linkStyle();
+
     &:last-child {
       padding-bottom: 0px;
     }

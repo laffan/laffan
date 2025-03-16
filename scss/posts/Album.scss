@@ -4,6 +4,8 @@
   height: 450px;
   display: grid;
   grid-template-columns: var(--golden5) 1fr var(--golden5);
+  margin-bottom: 20px;
+  margin-top: 20px;
   
   button {
     background-color: transparent;
@@ -13,34 +15,36 @@
     height: 400px;
     border: none;
     cursor: pointer;
-    
+
     &:hover {
-      background-color: rgba(0,0,0,0.05);
+      background-color: rgba(0, 0, 0, 0.05);
     }
   }
-  
+
   &__PrevBtn {
     background-image: url(/img/album-arrow-left.png);
   }
-  
+
   &__NextBtn {
     background-image: url(/img/album-arrow-right.png);
   }
-  
+
   &__Inner {
     overflow: hidden;
   }
-  
+
   &__InnerImages {
     display: flex;
     transition: transform 0.3s ease-in-out;
   }
-  
+
   .SingleImage {
     height: 400px;
     flex-shrink: 0;
     padding-right: var(--golden7);
-    
+    p {
+      padding-top: 10px;
+    }
     img {
       height: 100%;
       width: auto;
