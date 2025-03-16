@@ -132,7 +132,12 @@
   &__ProjectsImage img {
     width: 110%;
     float: left;
+    margin-top: -30px;
+    padding-bottom: 30px;
     mix-blend-mode: multiply;
+    @include breakpoint(sm) {
+      display: none;
+    }
   }
 }
 

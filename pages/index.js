@@ -112,7 +112,6 @@ const Index = ({ projectsJSON }) => {
           </div>
         </div>
 
-        <h3>Papers</h3>
         <h4>
           <a href="/pdf/Laffan_CHI_2023_InscribeVR.pdf" target="_blank">
             Inscribe : Designing for Reflection in VR (CHI 2023)
