@@ -7,34 +7,46 @@ order: 4
 
 
 The star shelves are an exercise in simple, plywood based furniture design, combined with an element of surprise. Drilled in to the back panel of one of the shelves are three hundred 1mm holes, each one revealing the tip of some optic filament. These filaments are the "stars", which are divided in to the major constellations of the western hemisphere. Each constellation is controlled by an individual LED, which, by way of a wifi-enabled Arudino, which is controlled by a React app.
+
   <SingleImage 
   slug="star-shelf" 
   url="shelf-construction.jpg" 
-  caption="First shelf being built."
+  caption="First shelf being constructed in our back alley."
   align="Left" />
 
-### Why Shelves?
 
 I grew up surrounded by books and, to a lesser degree, bookshelves. The shelves were utilitarian affairs, and this, generally speaking, tends to be the case. Bookshelves are not designed to evoke a sense of delight. As furniture, they play a supporting role, and succeed when the books themselves stand out. A good bookshelf plays the role of a good stage: it disappears.
-
-
-### A contained universe
 
 This invisibility makes them an ideal candidate for generating surprise. For this project, the goals were twofold : embed a surprising interaction in to the shelf itself, and have that interaction reflect the shelf's actual role. After some thought, <i>stars</i> came to mind, both as a theme and as a useful metahor.  Stars evoke our own smallness in time, and our universal sense of wonder.  Books do that too, or they do for me. 
 
 
 <Album>
+
   <SingleImage 
   slug="star-shelf" 
   url="shelf-diagram.jpg" 
-  caption="This is a pictum for the star shelf." />
+  caption="Constellation diagram."
+   />
+
   <SingleImage 
   slug="star-shelf" 
-  url="shelf-starsketch.jpg"  />
+  url="shelf-progress-desk.jpg" 
+  caption="Each star is an individual strand of fiber optic filament." 
+
+  />
+
+  <SingleImage 
+  slug="star-shelf" 
+  url="shelf-starsketch.jpg"  
+  caption="Drilling constellation holes."
+  />
+
 </Album>
 
 
 In default mode, the shelf remains dark during the day, in what I've come to think of a "surprise reset."  They appear at sunset, with the astrological sign of the current month set as a different color.   In direct mode, the user can visit a website that controls each constellation to select colors and light directly. 
+
+
 
 The shelves themselves are just 3/4" finish ply with a chestnut stain.  The stars are made using optical filament, pushed through 1mm holes and secured with dabs of hot glue. They are then clustered in to various constellations, and each cluster is assigned a separate LED. The LEDs are attached to a D1 ESP8266 development board, which is listening for instructions from a website.
 
