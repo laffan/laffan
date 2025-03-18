@@ -211,8 +211,8 @@ const Index = ({ projectsJSON }) => {
         </div>
       </section>
 
-      <section className="Coliphon" id="coliphon">
-        <h2>Coliphon</h2>
+      <section className="Colophon" id="colophon">
+        <h2>COLOPHON</h2>
 
         <p>
           Any website is only the very tip of an enormous iceberg of
@@ -222,8 +222,8 @@ const Index = ({ projectsJSON }) => {
           them, you have my humble thanks. What a world we live in.
         </p>
 
-        <div className="Coliphon__Credits">
-          <div className="Coliphon__Column">
+        <div className="Colophon__Credits">
+          <div className="Colophon__Column">
             <h4>FONTS</h4>
             <p>
               The headers are a combination of{" "}
@@ -265,7 +265,7 @@ const Index = ({ projectsJSON }) => {
               .
             </p>
           </div>
-          <div className="Coliphon__Column">
+          <div className="Colophon__Column">
             <h4>TOOLS</h4>
             <p>
               Layout designed with{" "}

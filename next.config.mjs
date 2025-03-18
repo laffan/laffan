@@ -7,9 +7,9 @@ const nextConfig = {
     loader: "akamai",
     path: "",
   },
-  assetPrefix: "./",
-  output: 'export',
-  trailingSlash: true,
+  // assetPrefix: "./",
+  // output: 'export',
+  // trailingSlash: true,
 
 
 };

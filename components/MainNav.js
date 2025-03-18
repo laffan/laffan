@@ -47,7 +47,7 @@ const NavItems = ({ exclude }) => {
     ],
     secondary: [
       // { name: "Tools", target: "#tools" },
-      { name: "Coliphon", target: "#coliphon" },
+      { name: "Colophon", target: "#colophon" },
     ],
   };
 
