@@ -132,9 +132,9 @@ const Index = ({ projectsJSON }) => {
           <ProjectListItems projectsJSON={projectsJSON} length={3} />
         </ul>
         <div className="Works__Middle">
-          <a href={"https://github.com/laffan/digital-sketchbook"}>
+          <a href={"https://github.com/laffan/lookbook"}>
             <div className="Works__MiddleText">
-              <h3>Playbook</h3>
+              <h3>Lookbook</h3>
               <p>A digital sketchbook of experiments in Blender and P5.js.</p>
             </div>
             <div className="Works__MiddleImg">
